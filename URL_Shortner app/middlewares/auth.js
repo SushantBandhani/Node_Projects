@@ -1,7 +1,7 @@
 const {getUser}=require('../service/auth')
 
 async function restrictToLoggedUserOnly(req,res,next){
-    const userUid=req.cookies?.uid //cookie? mtlb agr cookie hai to chalega ni hai to error ni dega age badhega
+    const userUid=req.cookies?.uid 
     console.log(req)
 
     if(!userUid){
@@ -19,7 +19,7 @@ async function restrictToLoggedUserOnly(req,res,next){
 }
 
 async function checkAuth(req,res,next){
-    const userUid=req.cookies?.uid //cookie? mtlb agr cookie hai to chalega ni hai to error ni dega age badhega
+    const userUid=req.cookies?.uid 
     // console.log(req)
     const user=getUser(userUid)
     req.user=user
