@@ -10,7 +10,7 @@ router.get('/signup',(req,res)=>{
 })
 router.post('/signup',async(req,res)=>{
     const{fullname,email,password}=req.body
-    await UserActivation.create({
+    await User.create({
         fullname,email,password 
     })
     return res.redirect("/")  //redirecting to homepage
